@@ -1,7 +1,7 @@
 // import firebase from "firebase";/
 import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
-import { getFirestore, collection, addDoc } from "firebase/firestore";
+// import { getAnalytics } from "firebase/analytics";
+// import { getFirestore } from "firebase/firestore";
 
 var firebaseConfig = {
   apiKey: "AIzaSyBV4tKqTwWobCEqfHtyRjrP3IncoR6oiW4",
@@ -19,7 +19,7 @@ var firebaseConfig = {
 // export default firebase;
 const app = initializeApp(firebaseConfig);
 // const analytics = getAnalytics(app);
-const db = getFirestore(app);
+// const db = getFirestore(app);
 
 // const colRef = collection(db, "salesQuote");
 

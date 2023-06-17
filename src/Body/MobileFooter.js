@@ -29,14 +29,14 @@ export default function MobileFooter() {
                             <a href= './' style={{color: '#666666'}}>Home</a>
                         </div>
                         <div>
-                            <a style={{color: '#666666'}} href= 'https://drive.google.com/file/d/18mnsjP4Kg8e2NYAeU0twS3YqXjuitt36/view' target="_blank" rel="noreferrer">Privacy Policy</a>
+                            <a style={{color: '#666666'}} href= 'https://drive.google.com/file/d/18mnsjP4Kg8e2NYAeU0twS3YqXjuitt36/view' target="_blank" rel="noopener noreferrer">Privacy Policy</a>
                         </div>
                     </Grid>
                 <Grid container justifyContent='center' columnGap={4} >
 
                     {links.map((link, index) => (
                     <div key={index} >
-                        <a href={link.link}target="_blank" rel="noreferrer" style={{cursor:'pointer'}}>{link.avatar}</a>
+                        <a href={link.link}target="_blank" rel="noopener noreferrer" style={{cursor:'pointer'}}>{link.avatar}</a>
                     </div>
                     ))}
                     </Grid>

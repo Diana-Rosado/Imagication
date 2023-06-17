@@ -26,11 +26,45 @@ const initialValues = {
 export default function FormDialog(props) {
   const [clientInfo, setClientInfo] = useState(initialValues);
 
+  const [formErrors, setFormErrors] = useState({
+    fullName: false,
+    email: false,
+    phoneNumber: false,
+  });
+
   const handleInputChange = (e) => {
     setClientInfo((prevState) => ({
       ...prevState,
       [e.target.id]: e.target.value,
     }));
+  };
+  const validateForm = () => {
+    const errors = {
+      fullName: false,
+      email: false,
+      phoneNumber: false,
+    };
+    let hasError = false;
+
+    if (clientInfo.fullName.trim() === '') {
+      errors.fullName = true;
+      hasError = true;
+    }
+
+    if (clientInfo.email.trim() === ''|| !clientInfo.email.includes('@')) {
+      errors.email = true;
+      hasError = true;
+    }
+
+    if (    clientInfo.phoneNumber.trim() === '' ||
+    clientInfo.phoneNumber.trim().length !== 10) {
+      errors.phoneNumber = true;
+      hasError = true;
+    }
+
+    setFormErrors(errors);
+
+    return !hasError;
   };
 
   const addToDB = async () => {
@@ -67,6 +101,8 @@ export default function FormDialog(props) {
             fullWidth
             variant="standard"
             onChange={handleInputChange}
+            error={formErrors.fullName}
+            helperText={formErrors.fullName && 'Please enter your full name'}
           />
           <TextField
             value={clientInfo.email}
@@ -79,6 +115,8 @@ export default function FormDialog(props) {
             fullWidth
             variant="standard"
             onChange={handleInputChange}
+            error={formErrors.email}
+            helperText={formErrors.email && 'Please enter a valid email'}
           />
           <TextField
             value={clientInfo.phoneNumber}
@@ -91,6 +129,8 @@ export default function FormDialog(props) {
             fullWidth
             variant="standard"
             onChange={handleInputChange}
+            error={formErrors.phoneNumber}
+            helperText={formErrors.phoneNumber && 'Please enter a 10 digit phone number. Enter with no spaces or symbols'}
           />
           <TextField
             value={clientInfo.schoolName}
@@ -102,14 +142,18 @@ export default function FormDialog(props) {
             fullWidth
             variant="standard"
             onChange={handleInputChange}
+
           />
         </DialogContent>
         <DialogActions>
           <Button onClick={props.handleClose}>Cancel</Button>
           <Button
             onClick={() => {
-              addToDB();
-              props.handleClose();
+              if (validateForm()) {
+                addToDB();
+                props.handleClose();
+                alert('Form submitted successfully');
+              }
             }}
           >
             Submit

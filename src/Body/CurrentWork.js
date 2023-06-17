@@ -20,7 +20,7 @@ export default function CurrentWork() {
                 </div>
             {works.map((work, index) => (
                 <div key={index} className="works pt-48 pb-48">
-                    <a href={work.link} target="_blank" rel="noreferrer">
+                    <a href={work.link} target="_blank" rel="noopener noreferrer">
                         <img src={work.image} alt={work.name} />
                     </a>
                     <h3>{work.name}</h3>

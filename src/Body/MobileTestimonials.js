@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react'
-import {Grid, Box, Button, IconButton} from '@mui/material';
+import {Grid, Box, IconButton} from '@mui/material';
 import Eli from './images/jpg/Eli.jpg'
 import Gabe from './images/jpg/Gabe.jpg'
 import Koudjedji from './images/jpg/Koudjedji.jpg'

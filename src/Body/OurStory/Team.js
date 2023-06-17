@@ -1,6 +1,7 @@
 import { Typography, Box, Grid, Card, CardContent,  Container} from '@mui/material'
 import Diana from '../images/jpg/Diana.png'
 import Bryan from '../images/jpg/Bryan.png'
+import React from 'react'; 
 
 export default function Team() {
     const team = [

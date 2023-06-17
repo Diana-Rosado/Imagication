@@ -1,4 +1,4 @@
-import MobileNavbar from "./navbar/MobileNavbar.js";
+import React from 'react'; 
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import "./App.css";
 import "@fontsource/montserrat";

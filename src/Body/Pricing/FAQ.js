@@ -1,5 +1,5 @@
 import React from 'react'
-import {Grid, useMediaQuery, Box,} from '@mui/material';
+import {Grid} from '@mui/material';
 import Accordion from '@mui/material/Accordion';
 import AccordionSummary from '@mui/material/AccordionSummary';
 import AccordionDetails from '@mui/material/AccordionDetails';
