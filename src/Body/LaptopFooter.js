@@ -26,7 +26,7 @@ export default function LaptopFooter() {
                     <Grid container direction='row' justifyContent='space-around' >
                         <Grid >
                             <div style={{color: '#666666'}}>
-                                Imagication
+                                Imagication Virtual Technologies LLC
                             </div>
                         </Grid>
                         <Grid columnGap={3} justifyContent='flex-end' container direction='row' style={{width:'20%'}} >
