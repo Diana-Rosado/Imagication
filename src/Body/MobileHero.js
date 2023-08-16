@@ -5,7 +5,7 @@ import Video from './Videos/LandingPageVideo.gif';
 export default function MobileHero() {
 
     const handleButtonClick = () => {
-        window.open('http://bryanapinos.github.io/ImagicationUnityBuilds/', '_blank');
+        window.open('https://unityanalytics-525cb.web.app/', '_blank');
       };
     
   
